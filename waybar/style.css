@@ -1,0 +1,150 @@
+* {
+  border: none;
+  font-family: Iosevka Nerd Font, sans-serif;
+  font-size: 18px;
+}
+
+window#waybar {
+  /*background-color: #cba6f7;*/	
+  background-color: #1e222a;
+  /*background: transparent;*/
+  color: #cba6f7;
+  transition-property: background-color;
+  transition-duration: .5s;
+  opacity: 0.8;
+  border-radius: 90px;
+ } 
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+#workspaces,
+#mode,
+#cpu,
+#memory,
+#temperature,
+#custom-launcher,
+#custom-media,
+#custom-wlogout,
+#clock,
+#idle_inhibitor,
+#language,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#tray {
+  background-color: #1e222a;
+  padding: 0 10px;
+  margin: 2px 4px 5px 5px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 90px;
+  background-clip: padding-box;
+}
+
+#custom-wlogout button {
+  padding: 0 5px;
+  min-width: 20px;
+  color: #cba6f7;
+}
+
+#custom-wlogout button:hover {
+  background-color: #cba6f7;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  min-width: 20px;
+  color: #cba6f7;
+}
+
+#workspaces button:hover {
+  background-color: #cba6f7;
+}
+
+#workspaces button.focused {
+  color: #6c7086;
+}
+
+#workspaces button.urgent {
+  color: #e06c75;
+}
+
+#cpu {
+  color: #61afef;
+}
+
+#memory {
+  color: #c678dd;
+}
+
+#temperature {
+  color: #cba6f7;
+}
+
+#temperature.critical {
+  background-color: #e06c75;
+  color: #1e222a;
+}
+
+#custom-media {
+  background-color: #cba6f7;
+  color: #1e222a;
+}
+
+#clock {
+  color: #cba6f7;
+}
+
+#language {
+  color: #56b6c2;
+}
+
+#pulseaudio {
+  color: #cba6f7;
+}
+
+#pulseaudio.muted {
+  background-color: #e06c75;
+  color: #1e222a;
+}
+
+#backlight {
+  color: #61afef;
+}
+
+#battery {
+  color: #98c379;
+}
+
+#battery.charging, #battery.plugged {
+  background-color: #98c379;
+  color: #1e222a;
+}
+
+@keyframes blink {
+    to {
+        background-color: #1e222a;
+        color: #e06c75;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #e06c75;
+    color: #1e222a;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+    color: #cba6f7
+}
+
+#network.disconnected {
+    background-color: #e06c75;
+    color: #1e222a;
+}

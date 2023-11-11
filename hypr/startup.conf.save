@@ -1,0 +1,6 @@
+# Startup
+xec-once = /usr/libexec/polkit-gnome-authentication-agent-1
+exec-once = waybar -c ~/.config/waybar/HyprWaybar/config -s ~/.config/waybar/HyprWaybar/style.css
+exec-once = swaync &
+exec-once = swaybg -i ~/Pictures/Wallpapers/old.png -m fill &
+exec-once = swayidle -w timeout 300 'bash /home/mera/.config/sway/lock.sh' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'bash /home/mera/.config/sway/lock.sh'
